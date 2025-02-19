@@ -3,6 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%; /* Ensure the body and html occupy the full height of the viewport */
+    width: 100%; /* Ensure the body and html occupy the full height of the viewport */
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
