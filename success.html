@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready to Cast Your Vote</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="success-container">
+        <h1>Hello, ready to cast your vote?</h1>
+        <p>Determining the school you're from...</p>
+
+        <!-- Rotating circle loading indicator -->
+        <div class="loader"></div>
+
+        <p>Wait as you are being redirected...</p>
+    </div>
+
+    <script>
+        // Automatically redirect after 10 minutes (600,000 milliseconds)
+        setTimeout(function() {
+            window.location.href = "finalPage.html"; // Redirect to final destination
+        }, 1400000); // 10 minutes
+    </script>
+</body>
+</html>
