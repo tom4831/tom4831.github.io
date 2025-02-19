@@ -1,72 +1,75 @@
-body {
+/* Global styles for the body */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure the body and html occupy the full height of the viewport */
     font-family: Arial, sans-serif;
-    background-color: #e6f1fa;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    background-color: #f0f8ff; /* Light background color */
 }
 
+/* Styling for the login container */
 .container {
-    background-color: #fff;
-    padding: 30px;
+    background-color: white;
+    padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
-}
-
-h2 {
+    max-width: 400px; /* Restrict max width to make it more compact */
     text-align: center;
-    color: #0066cc;
 }
 
+/* Heading style */
+h2 {
+    color: #0066cc;
+    margin-bottom: 20px;
+}
+
+/* Input field styling */
 .input-field {
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .input-field label {
     display: block;
-    color: #333;
+    margin-bottom: 5px;
     font-size: 14px;
+    color: #333;
 }
 
 .input-field input {
     width: 100%;
     padding: 10px;
-    font-size: 14px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
-.btn {
-    background-color: #0066cc;
+/* Button styling */
+button.btn {
+    background-color: #3498db; /* Blue button */
     color: white;
-    padding: 10px 15px;
+    padding: 12px 20px;
     border: none;
     border-radius: 4px;
-    width: 100%;
-    cursor: pointer;
     font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #005bb5;
+button.btn:hover {
+    background-color: #2980b9;
 }
+
 
 
 /* Base styling for the success page */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+
 
 .success-container {
     text-align: center;
