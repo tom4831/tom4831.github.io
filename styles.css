@@ -3,7 +3,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%; /* Ensure the body and html occupy the full height of the viewport */
-    width: 100%; /* Ensure the body and html occupy the full height of the viewport */
+    width: 100%; /* Ensure the body and html occupy the full width of the viewport */
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -27,14 +27,14 @@ body, html {
     box-sizing: border-box;
 }
 
-/* Heading style */
-h2 {
+/* Heading style for login and success page */
+h2, h1 {
     color: #0066cc;
     margin-bottom: 30px;
     font-size: 28px; /* Increase heading font size */
 }
 
-/* Input field styling */
+/* Input field styling for the login form */
 .input-field {
     margin-bottom: 30px; /* Increase space between inputs */
     text-align: left;
@@ -74,6 +74,36 @@ button.btn:hover {
     background-color: #2980b9;
 }
 
+/* Success container styles */
+.success-container {
+    text-align: center;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Light gray */
+    border-top: 8px solid #3498db; /* Blue color */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite; /* Infinite rotation */
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+p {
+    color: #555;
+}
+
 /* Responsive Design for Smaller Screens */
 @media (max-width: 480px) {
     .container {
@@ -82,7 +112,7 @@ button.btn:hover {
         max-width: 100%; /* Allow full width on smaller screens */
     }
 
-    h2 {
+    h2, h1 {
         font-size: 22px; /* Adjust heading font size for smaller screens */
     }
 
@@ -94,5 +124,14 @@ button.btn:hover {
     button.btn {
         padding: 14px 18px; /* Adjust button padding */
         font-size: 16px; /* Adjust font size for smaller buttons */
+    }
+
+    .success-container {
+        padding: 20px; /* Less padding for success page */
+    }
+
+    .loader {
+        width: 40px; /* Smaller loader on small screens */
+        height: 40px;
     }
 }
