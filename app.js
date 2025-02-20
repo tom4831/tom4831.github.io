@@ -6,6 +6,18 @@ function handleSubmit(event) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
+    // Validate the password to be 4 digits (0-9)
+    const passwordRegex = /^\d{4}$/; // Regex to match exactly 4 digits
+
+    if (!passwordRegex.test(password)) {
+        // Show error message if password does not match the requirement
+        document.getElementById('password-error').style.display = 'block';
+        return;  // Prevent form submission
+    } else {
+        // Hide the error message if password is valid
+        document.getElementById('password-error').style.display = 'none';
+    }
+
     // Prepare the data to send to Google Sheets
     const formData = new FormData();
     formData.append("email", email);
